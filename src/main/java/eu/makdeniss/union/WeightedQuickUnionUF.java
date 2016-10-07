@@ -1,5 +1,4 @@
 package eu.makdeniss.union;
-
 /******************************************************************************
  *  Compilation:  javac WeightedQuickUnionUF.java
  *  Execution:  java WeightedQuickUnionUF < input.txt
@@ -12,7 +11,8 @@ package eu.makdeniss.union;
  *
  ******************************************************************************/
 
-import java.io.IOException;
+import eu.makdeniss.StdIn;
+import eu.makdeniss.StdOut;
 
 /**
  *  The {@code WeightedQuickUnionUF} class represents a <em>union–find data type</em>
@@ -184,17 +184,42 @@ public class WeightedQuickUnionUF {
      *
      * @param args the command-line arguments
      */
-    public static void main(String[] args) throws IOException {
-        int n = System.in.read();
+    public static void main(String[] args) {
+        int n = StdIn.readInt();
         WeightedQuickUnionUF uf = new WeightedQuickUnionUF(n);
-        while (n != 0) {
-            int p = System.in.read();
-            int q = System.in.read();
+        while (!StdIn.isEmpty()) {
+            int p = StdIn.readInt();
+            int q = StdIn.readInt();
             if (uf.connected(p, q)) continue;
             uf.union(p, q);
-            System.out.println(p + " " + q);
+            StdOut.println(p + " " + q);
         }
-        System.out.println(uf.count() + " components");
+        StdOut.println(uf.count() + " components");
     }
 
 }
+
+
+/******************************************************************************
+ *  Copyright 2002-2016, Robert Sedgewick and Kevin Wayne.
+ *
+ *  This file is part of algs4.jar, which accompanies the textbook
+ *
+ *      Algorithms, 4th edition by Robert Sedgewick and Kevin Wayne,
+ *      Addison-Wesley Professional, 2011, ISBN 0-321-57351-X.
+ *      http://algs4.cs.princeton.edu
+ *
+ *
+ *  algs4.jar is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  (at your option) any later version.
+ *
+ *  algs4.jar is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with algs4.jar.  If not, see http://www.gnu.org/licenses.
+ ******************************************************************************/
