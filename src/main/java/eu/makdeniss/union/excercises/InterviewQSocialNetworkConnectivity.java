@@ -7,6 +7,8 @@ import eu.makdeniss.union.WeightedQuickUnionUF;
 /**
  * Created by Deniss Makarenkov on 09/10/16.
  * Visit http://www.makdeniss.eu/
+ *
+ * The performance will be M lg N because you are iterating M times (the amount of lines in the log file) and the union operations takes: lg n.
  */
 public class InterviewQSocialNetworkConnectivity {
 
