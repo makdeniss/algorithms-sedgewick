@@ -1,7 +1,5 @@
 package eu.makdeniss.basicprogrammingmodel;
 
-import java.util.ArrayList;
-
 /**
  * Created by Deniss Makarenkov on 09/10/16.
  * Visit http://www.makdeniss.eu/
